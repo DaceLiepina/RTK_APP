@@ -1,0 +1,150 @@
+/* ======== KONTEINERS ======== */
+.productList {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.productList h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #e0d5d5;
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+/* ======== REŽĢIS ======== */
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+  padding: 10px 0;
+  margin: 20px 0;
+  align-items: stretch;
+}
+
+/* ======== KARTIŅA ======== */
+.productCard {
+  background: #c5c0c0;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 350px;   /* SIMETRISKS augstums */
+   position: relative; /* nepieciešams deleteBtn pozicionēšanai */
+
+}
+
+/* Hover efekts */
+.productCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+}
+
+/* ======== ATTĒLS ======== */
+.productImage {
+  width: 100%;
+  height: 170px; /* Simetriskāks, kvadrātiskāks */
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  background: #fafaf9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productImage img {
+  width: 90%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+.productTitle {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.productCategory {
+  color: #777;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+
+.productDescription {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  flex-grow: 1;  
+}
+
+.productRating {
+  color: #a36b10;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.productPrice {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #124280;
+  margin-bottom: 12px;
+}
+
+
+.addToCardBtn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.25s ease;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.addToCardBtn:hover {
+  background: linear-gradient(135deg, #0056b3, #004095);
+}
+.deleteBtn {
+  position: absolute;
+  top: 6px;
+  right: 4px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 25%;
+  width: 15px;
+  height: 28px;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 2px;
+  text-align: center;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+
+.deleteBtn:hover {
+  background: darkred;
+}
+
+
+.loading, .error {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+}
+
+.loading { color: #666; }
+.error { color: #d32f2f; }

@@ -1,12 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
 import counterReducer from '../features/counter/counterSlice'
 import sandwichReducer from '../features/sandwich/sandwichSlice'
+import usersReducer from '../features/users/usersSlice'
+import productReducer from '../features/products/productSlice'
 
 //→ Импортируем configureStore — простой способ создать store.
 export const store = configureStore({
 reducer: {
     counter: counterReducer,
-    sandwich: sandwichReducer
+    sandwich: sandwichReducer,
+    users: usersReducer,
+    products: productReducer,
 }
 
 })
