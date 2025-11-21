@@ -1,4 +1,4 @@
-/* ======== KONTEINERS ======== */
+
 .productList {
   padding: 20px;
   max-width: 1200px;
@@ -8,12 +8,18 @@
 .productList h1 {
   text-align: center;
   margin-bottom: 30px;
-  color: #e0d5d5;
-  font-size: 4rem;
+  color: #372a6e;
+  font-size: 3rem;
   font-weight: 600;
+  padding: 20px 50px;
+  display: inline-block;
+  border: 5px solid #231a4b;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  background: #ebe2e2;
 }
 
-/* ======== REŽĢIS ======== */
+
 .productGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -23,7 +29,7 @@
   align-items: stretch;
 }
 
-/* ======== KARTIŅA ======== */
+
 .productCard {
   background: #c5c0c0;
   border-radius: 14px;
@@ -33,21 +39,21 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 350px;   /* SIMETRISKS augstums */
+  min-height: 350px;  
    position: relative; /* nepieciešams deleteBtn pozicionēšanai */
 
 }
 
-/* Hover efekts */
+
 .productCard:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 22px rgba(0,0,0,0.18);
 }
 
-/* ======== ATTĒLS ======== */
+
 .productImage {
   width: 100%;
-  height: 170px; /* Simetriskāks, kvadrātiskāks */
+  height: 170px; 
   overflow: hidden;
   border-radius: 10px;
   margin-bottom: 14px;

@@ -41,7 +41,8 @@ const productsSlice = createSlice({
   initialState,
   reducers: {
 removeProduct: (state, action) => {
-      // dzēš produktu pēc id
+      // dzēš produktu pēc id state.items ir produktu masīvs,
+      //payload ir informācija, ko mēs nododam, kad izsaucam dispatch.
       state.items = state.items.filter((p) => p.id !== action.payload);
     },
 
