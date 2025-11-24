@@ -1,0 +1,135 @@
+.navigation {
+  background-color: rgb(90, 99, 109);
+  height: 120px;
+  border: solid 20px rgb(36, 102, 168);
+  position: sticky;
+  top: 0;
+  max-width: 110%;
+  align-items: center;
+  justify-content: center;
+   z-index: 1000; 
+  padding: 5px;
+  margin: 5px;
+
+}
+.list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 40px; /* nedaudz lielāka atstarpe – vizuāli elpo */
+  justify-content: center; /* centrē horizontāli */
+  align-items: center; /* centrē vertikāli */
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.8rem;
+  padding: 6px 10px;
+  /* transition: color 0.3s ease; */
+}
+
+.home {
+  background: linear-gradient(135deg, #2d5075, #3c6ba5);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.registration{
+background: linear-gradient(135deg, #1e3a58, #3c6ba5);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+
+}
+
+.home:hover {
+  background: linear-gradient(135deg, #3c6ba5, #2d5075);
+  transform: scale(1.05);
+}
+
+.link:hover {
+  color: #FEBD68;
+}
+
+
+.link:global.active {
+  text-decoration: underline;
+}
+.listElement {
+  height: fit-content;
+}
+
+/* 🔹 Ekrāniem zem 900px — samazinam fontus un atstarpes */
+@media (max-width: 900px) {
+  .link {
+    font-size: 1.4rem;
+    padding: 4px 8px;
+  }
+
+  .home {
+    font-size: 1.6rem;
+    padding: 5px 10px;
+  }
+
+  .list {
+    gap: 25px;
+  }
+
+  .navigation {
+    height: auto; /* ļauj augstumam pielāgoties saturam */
+    padding: 10px;
+  }
+}
+
+/* 🔹 Zem 700px — atļaujam divas rindas, centrējam 100% platumā */
+@media (max-width: 700px) {
+  .list {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .link,
+  .home {
+    font-size: 1.3rem;
+    padding: 4px 6px;
+  }
+
+  .navigation {
+    border-width: 15px;
+  }
+}
+
+/* 🔹 Zem 500px — kolonnas režīms (vai vēlāk – hamburger izvēlne) */
+@media (max-width: 500px) {
+  .list {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .navigation {
+    border-width: 10px;
+    padding: 10px;
+  }
+
+  .link,
+  .home {
+    display: block;
+    font-size: 1.2rem;
+  }
+}

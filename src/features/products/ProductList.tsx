@@ -1,13 +1,17 @@
 // components/ProductList.tsx
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, type JSX } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { fetchProducts } from '../products/productSlice';
 import ProductCard from './ProductCard';
 import style from './ProductList.module.css'
+import Cart from './cart/Cart';
+import CartIcon from './cart/CartIcon/CartIcon';
 
 const ProductList: React.FC = () => {
   const dispatch = useAppDispatch();
   const { items: products, loading, error } = useAppSelector((state) => state.products);
+
+    const [showCart, setShowCart] = useState(false);
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -22,8 +26,13 @@ const ProductList: React.FC = () => {
   }
 
   return (
+    
     <div className={style.productList}>
+      <Cart />
+     <CartIcon onClick={() => setShowCart((prev) => !prev)} />
+    {showCart && <Cart/>}
       <h1>Products</h1>
+      
       <div className={style.productGrid}>
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />

@@ -3,6 +3,7 @@ import React from 'react';
 import { removeProduct, type Product } from './productSlice';
 import style from './ProductList.module.css'
 import { useDispatch } from 'react-redux';
+import {addToCart} from "./cart/cartSlice"
 
 interface ProductCardProps {
   product: Product;
@@ -31,7 +32,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           ⭐ {product.rating.rate} ({product.rating.count} reviews)
         </div>
         <div className={style.productPrice}>${product.price}</div>
-        <button className={style.addToCardBtn}>Add to Cart</button>
+        <button className={style.addToCardBtn}
+        onClick={() => dispatch(addToCart(product))}
+        >Add to Cart</button>
       </div>
     </div>
   );

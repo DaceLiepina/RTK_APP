@@ -2,12 +2,16 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import  { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 // Async thunk for fetching products
-export const fetchProducts = createAsyncThunk(
-  'products/fetchProducts',
+export const fetchProducts = createAsyncThunk<Product[]>(
+  "products/fetchProducts",
   async () => {
-    const response = await fetch('https://fakestoreapi.com/products');
-    const data = await response.json();
-    return data;
+    const res = await fetch("https://fakestoreapi.com/products");
+
+    if (!res.ok) {
+      throw new Error(`HTTP error: ${res.status}`);
+    }
+
+    return await res.json();
   }
 );
 
