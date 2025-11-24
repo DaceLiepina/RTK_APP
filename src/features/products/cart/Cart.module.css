@@ -14,7 +14,7 @@
 .item {
   display: flex;
   gap: 20px;
-  background: #222;
+  background: #6b6969;
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 25px;
@@ -78,4 +78,71 @@
 
 .remove:hover {
   background: #900;
+}
+/* ---------------------------------------------------- */
+/* 🔹 RESPONSIVE — līdz 900px ekrāniem */
+/* ---------------------------------------------------- */
+@media (max-width: 900px) {
+  .cartContainer {
+    width: 95%;
+  }
+
+  .item {
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .image {
+    width: 110px;
+    height: 140px;
+  }
+
+  .name {
+    font-size: 18px;
+  }
+
+  .price,
+  .quantity {
+    font-size: 16px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 6px 14px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .item {
+    flex-direction: column;    /* 🔥 content saliekas kolonnā */
+    text-align: center;
+  }
+
+  .image {
+    width: 100px;
+    height: 120px;
+  }
+
+  .info {
+    width: 100%;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .price,
+  .quantity {
+    font-size: 14px;
+  }
+
+  .controls {
+    justify-content: center;
+  }
+
+  .btn {
+    width: 100%;          /* 🔥 pogas pilnā platumā */
+    max-width: 200px;
+  }
 }
