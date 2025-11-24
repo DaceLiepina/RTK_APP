@@ -1,5 +1,5 @@
 // components/ProductList.tsx
-import React, { useEffect, useState, type JSX } from 'react';
+import React, { useEffect, useState} from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { fetchProducts } from '../products/productSlice';
 import ProductCard from './ProductCard';

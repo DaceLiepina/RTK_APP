@@ -1,4 +1,4 @@
-import { configureStore, createReducer } from "@reduxjs/toolkit";
+import { configureStore} from "@reduxjs/toolkit";
 import counterReducer from '../features/counter/counterSlice'
 import sandwichReducer from '../features/sandwich/sandwichSlice'
 import usersReducer from '../features/users/usersSlice'
@@ -13,7 +13,6 @@ reducer: {
     users: usersReducer,
     products: productReducer,
     cart:cartReducer
-    
 }
 
 })
