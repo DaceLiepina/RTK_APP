@@ -4,7 +4,7 @@ import sandwichReducer from '../features/sandwich/sandwichSlice'
 import usersReducer from '../features/users/usersSlice'
 import productReducer from '../features/products/productSlice'
 import cartReducer from "../features/products/cart/cartSlice"
-
+import authReducer from '../features/auth/authSlice'
 //→ Импортируем configureStore — простой способ создать store.
 export const store = configureStore({
 reducer: {
@@ -12,7 +12,8 @@ reducer: {
     sandwich: sandwichReducer,
     users: usersReducer,
     products: productReducer,
-    cart:cartReducer
+    cart:cartReducer,
+    auth: authReducer
 }
 
 })

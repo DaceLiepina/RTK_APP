@@ -7,18 +7,37 @@ import Sandwich from "./features/sandwich/Sandwich";
 import { UsersList } from "./features/users/UsersList";
 import Layout from "./features/LayOut/LayOut";
 import Home from "./features/Home/Home";
-
+import Login from "./features/auth/Login";
+import ProtectedRoute from "./features/ProtectedRoute/ProtectedRoute";
 
 function App(): JSX.Element {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
+        {/* Publiski maršruti */}
         <Route index element={<Home />} />
-        <Route path="products" element={<ProductList />} />
-        <Route path="counter" element={<Counter />} />
-        <Route path="home" element={<Home />} />
-        <Route path="userslist" element={<UsersList />} />
-        <Route path="sandwich" element={<Sandwich />} />
+        <Route path="login" element={<Login />} />
+
+        {/* Aizsargātie maršruti */}
+        <Route
+          path="products"
+          element={<ProtectedRoute outlet={<ProductList />} />}
+        />
+
+        <Route
+          path="counter"
+          element={<ProtectedRoute outlet={<Counter />} />}
+        />
+
+        <Route
+          path="userslist"
+          element={<ProtectedRoute outlet={<UsersList />} />}
+        />
+
+        <Route
+          path="sandwich"
+          element={<ProtectedRoute outlet={<Sandwich />} />}
+        />
       </Route>
     </Routes>
   );
