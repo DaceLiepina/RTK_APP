@@ -25,6 +25,10 @@ export default function NavBar(): JSX.Element {
             </li>
 
             <li className={style.listelElement}>
+              <NavLink to="/weather" className={style.link}>Weather 🌦️</NavLink>
+            </li>
+
+            <li className={style.listelElement}>
               <NavLink to="/sandwich" className={style.link}>Sandwich</NavLink>
             </li>
 

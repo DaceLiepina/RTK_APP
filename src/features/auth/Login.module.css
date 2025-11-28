@@ -3,7 +3,7 @@
   max-width: 400px;
   margin: 50px auto;
   padding: 40px;
-  background: linear-gradient(145deg, #2d2d2d, #3a3a3a);
+  background: linear-gradient(145deg, #2d2d2d, #686464);
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   border: 1px solid #404040;
@@ -68,7 +68,7 @@
 }
 
 .inputField:hover {
-  border-color: #555;
+  border-color: #585050;
 }
 
 .loginButton {

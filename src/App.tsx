@@ -9,6 +9,7 @@ import LayOut from "./features/LayOut/LayOut";
 import Home from "./features/Home/Home";
 import Login from "./features/auth/Login";
 import ProtectedRoute from "./features/ProtectedRoute/ProtectedRoute";
+import WeatherApp from "./features/WeatherApp/WeatherApp";
 
 function App(): JSX.Element {
   return (
@@ -33,7 +34,10 @@ function App(): JSX.Element {
           path="userslist"
           element={<ProtectedRoute outlet={<UsersList />} />}
         />
-
+<Route
+          path="weather"
+          element={<ProtectedRoute outlet={<WeatherApp />} />}
+        />
         <Route
           path="sandwich"
           element={<ProtectedRoute outlet={<Sandwich />} />}
