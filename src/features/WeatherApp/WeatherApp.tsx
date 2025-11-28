@@ -15,14 +15,55 @@ const WeatherApp: React.FC = () => {
     (state: RootState) => state.weather
   );
 
-  const handleSearch = (): void => {
-    if (!city.trim()) {
-      alert("Введите название города");
+const handleSearch = (): void => {
+  const trimmedCity = city.trim();
+  
+  const validations = [
+    { 
+      condition: !trimmedCity, 
+      message: "🚫 Please enter a city name" 
+    },
+    { 
+      condition: /\d/.test(trimmedCity), 
+      message: "🔢 Numbers are not allowed in city names" 
+    },
+    { 
+      condition: /[!@#$%^&*()_+=\[\]{};":\\|,.<>\/?]/.test(trimmedCity), 
+      message: "❌ Only letters, spaces, hyphens (-) and apostrophes (') are allowed" 
+    },
+    { 
+      condition: trimmedCity.length < 2, 
+      message: "📏 City name must be at least 2 characters" 
+    },
+    { 
+      condition: trimmedCity.length > 50, 
+      message: "📏 City name is too long" 
+    },
+        { 
+      // MAINĪTS: pārbauda uz atkārtotiem rakstzīmju rakstiem
+      condition: /(.)\1{2,}/.test(trimmedCity), // 3 vai vairāk vienādi simboli pēc kārtas
+      message: "🔁 Too many repeated characters in city name" 
+    },
+    { 
+      // PAPILDUS: pārbauda uz nejaušām burtu virknēm bez patskaņiem
+      condition: /^[bcdfghjklmnpqrstvwxz]{5,}$/i.test(trimmedCity),
+      message: "🏙️ Please enter a valid city name" 
+    },
+    { 
+      // PAPILDUS: pārbauda uz burtu virknēm bez atstarpēm, kas izskatās nejauši
+      condition: /^[a-z]{6,}$/i.test(trimmedCity) && !/[aeiouy]/i.test(trimmedCity),
+      message: "🔤 This doesn't look like a real city name" 
+    }
+ ];
+  for (const validation of validations) {
+    if (validation.condition) {
+      alert(validation.message);
       return;
     }
-    dispatch(fetchWeather(city) as any);
-  };
+  }
 
+  dispatch(fetchWeather(trimmedCity) as any);
+};
   const handleCityChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     dispatch(setCity(e.target.value));
   };
