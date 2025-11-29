@@ -13,7 +13,7 @@ export default function NavBar(): JSX.Element {
         {user?.username ? (
           <>
             <li className={style.listelElement}>
-              <NavLink to="/home" className={style.home}>Home</NavLink>
+              <NavLink to="/" className={style.home}>Home</NavLink>
             </li>
 
             <li className={style.listelElement}>

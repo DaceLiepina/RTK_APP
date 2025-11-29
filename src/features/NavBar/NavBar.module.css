@@ -1,9 +1,10 @@
 /* NavBar.module.css */
 .navigation {
-  background-color: #5a5555;
+  background: linear-gradient(145deg, #2d2d2d, #686464);
   padding: 1rem 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
+  border: 1px solid #404040;
 }
 
 .list {
