@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import type { ApodItem } from "./apodTypes";
 
 const API_KEY = "uCABTgoVXNxPZoUztGICazW3JNxYLjesyFKrSGVU";
+//Redux thunk, который загружает из API 3 случайн изображения.
 
 export const fetchRandomApod = createAsyncThunk<
   ApodItem[],

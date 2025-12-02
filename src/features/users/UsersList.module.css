@@ -1,73 +1,83 @@
-/* Контейнер */
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  padding: 24px;
-  justify-content: center; /* красиво центрируем */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-/* Карточка */
+.title {
+  color: #03498f;
+  margin-bottom: 20px;
+}
+
+.refetchBtn {
+  padding: 10px 20px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.refetchBtn:hover {
+  background: #2980b9;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
 .card {
   background: white;
-  border: 1px solid #e3e3e3;
+  border-radius: 8px;
   padding: 20px;
-  border-radius: 14px;
-  box-shadow: 0 4px 10px rgb(0 0 0 / 0.08);
-  transition: 0.25s ease;
-
-  /* Размер карточки на больших экранах (примерно 3–4 в ряд) */
-  flex: 1 1 280px;
-  max-width: 320px; /* чтобы не растягивались слишком широко */
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgb(0 0 0 / 0.15);
-}
-
-/* Мобильные устройства */
-@media (max-width: 600px) {
-  .grid {
-    padding: 16px;
-    gap: 16px;
-  }
-
-  .card {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e1e5e9;
 }
 
 .name {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 12px;
+  margin: 0 0 15px 0;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
 }
 
 .field {
-  color: #444;
-  margin-bottom: 6px;
-  font-size: 15px;
+  margin: 10px 0;
+  line-height: 1.5;
+  color: rgb(74, 45, 128)
 }
 
 .field span {
-  font-weight: 600;
-  color: #000;
+  font-weight: 800;
+  color: #34495e;
+  margin-right: 8px;
 }
 
 .address {
-  margin-top: 14px;
-  padding-top: 10px;
+  margin-top: 15px;
+  padding-top: 15px;
   border-top: 1px solid #eee;
 }
 
 .address span {
-  font-weight: 600;
+  font-weight: 800;
+  color: #34495e;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.address p {
+  margin: 5px 0;
+  color: #555;
 }
 
 .loading {
   text-align: center;
-  font-size: 22px;
-  margin-top: 40px;
+  font-size: 18px;
+  color: #3498db;
+  padding: 40px;
 }

@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
-
-
 import type { AppDispatch, RootState } from "../../app/store";
 import { fetchRandomApod } from "./apodSlice";
 import ImageModal from "./ImageModal";
@@ -12,10 +9,13 @@ export default function ApodRandom() {
   const { items, loading, error } = useSelector(
     (state: RootState) => state.apod
   );
-
+//хранит URL изображения, которое пользователь хочет посмотреть в большом размере.
   const [modalImage, setModalImage] = useState<string | null>(null);
+
+  // название выбранной картинки.
   const [modalTitle, setModalTitle] = useState<string>("");
 
+  //Загрузка данных при рендере
   useEffect(() => {
     dispatch(fetchRandomApod());
   }, [dispatch]);
