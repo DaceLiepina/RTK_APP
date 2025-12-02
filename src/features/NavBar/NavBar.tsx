@@ -35,6 +35,9 @@ export default function NavBar(): JSX.Element {
             <li className={style.listelElement}>
               <NavLink to="/products" className={style.link}>Products</NavLink>
             </li>
+             <li className={style.listelElement}>
+              <NavLink to="/apod" className={style.link}>Nassa Apod</NavLink>
+            </li>
           </>
         ) : (
           <>
