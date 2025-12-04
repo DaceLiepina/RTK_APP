@@ -18,7 +18,7 @@ const WeatherApp: React.FC = () => {
     isLoading,
     isError,
     error,
-    refetch,
+    
   } = useGetWeatherQuery(searchCity || '', {
     skip: !searchCity, // не отправляем запрос, пока нет города
   });
