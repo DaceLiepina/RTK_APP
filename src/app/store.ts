@@ -5,9 +5,9 @@ import sandwichReducer from '../features/sandwich/sandwichSlice'
 import productReducer from '../features/products/productSlice'
 import cartReducer from "../features/products/cart/cartSlice"
 import authReducer from '../features/auth/authSlice'
-import weatherReducer from '../../src/features/WeatherApp/types/weatherSlice';
 import apodReducer from "../features/apod/apodSlice"
 import { usersApi } from "../features/users/userApi";
+import { weatherApi } from "../features/WeatherApp/types/weatherApi";
 //→ Импортируем configureStore — простой способ создать store.
 export const store = configureStore({
 reducer: {
@@ -16,14 +16,14 @@ reducer: {
     products: productReducer,
     cart:cartReducer,
     auth: authReducer,
-    weather: weatherReducer,
     apod: apodReducer,
      [usersApi.reducerPath]: usersApi.reducer,
+     [weatherApi.reducerPath]: weatherApi.reducer, // добавляем
 
 },
  middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
-    //   .concat(weatherApi.middleware)
+      .concat(weatherApi.middleware)
       .concat(usersApi.middleware),
 
 })
