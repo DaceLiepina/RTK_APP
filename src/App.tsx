@@ -11,6 +11,7 @@ import Login from "./features/auth/Login";
 import ProtectedRoute from "./features/ProtectedRoute/ProtectedRoute";
 import WeatherApp from "./features/WeatherApp/WeatherApp";
 import ApodRandom from "./features/apod/ApodRandom";
+import CryptoCard from "./features/crypto/CryptoCard";
 
 function App(): JSX.Element {
   return (
@@ -24,6 +25,10 @@ function App(): JSX.Element {
         <Route
           path="products"
           element={<ProtectedRoute outlet={<ProductList />} />}
+        />
+        <Route
+          path="crypto"
+          element={<ProtectedRoute outlet={<CryptoCard />} />}
         />
 
         <Route
