@@ -13,39 +13,61 @@ export default function NavBar(): JSX.Element {
         {user?.username ? (
           <>
             <li className={style.listelElement}>
-              <NavLink to="/" className={style.home}>Home</NavLink>
+              <NavLink to="/" className={style.home}>
+                Home
+              </NavLink>
             </li>
             <li className={style.listelElement}>
-              <NavLink to="/crypto" className={style.link}>Crypto</NavLink>
+              <NavLink to="/crypto" className={style.link}>
+                Crypto
+              </NavLink>
+            </li>
+            <li className={style.listelElement}>
+              <NavLink to="/timer" className={style.link}>
+                Christmas Countdown
+              </NavLink>
+            </li>
+            <li className={style.listelElement}>
+              <NavLink to="/counter" className={style.link}>
+                Counter
+              </NavLink>
             </li>
 
             <li className={style.listelElement}>
-              <NavLink to="/counter" className={style.link}>Counter</NavLink>
+              <NavLink to="/userslist" className={style.link}>
+                Users
+              </NavLink>
             </li>
 
             <li className={style.listelElement}>
-              <NavLink to="/userslist" className={style.link}>Users</NavLink>
+              <NavLink to="/weather" className={style.link}>
+                Weather 🌦️
+              </NavLink>
             </li>
 
             <li className={style.listelElement}>
-              <NavLink to="/weather" className={style.link}>Weather 🌦️</NavLink>
+              <NavLink to="/sandwich" className={style.link}>
+                Sandwich
+              </NavLink>
             </li>
 
             <li className={style.listelElement}>
-              <NavLink to="/sandwich" className={style.link}>Sandwich</NavLink>
+              <NavLink to="/products" className={style.link}>
+                Products
+              </NavLink>
             </li>
-
             <li className={style.listelElement}>
-              <NavLink to="/products" className={style.link}>Products</NavLink>
-            </li>
-             <li className={style.listelElement}>
-              <NavLink to="/apod" className={style.link}>Nassa Apod</NavLink>
+              <NavLink to="/apod" className={style.link}>
+                Nassa Apod
+              </NavLink>
             </li>
           </>
         ) : (
           <>
             <li className={style.listelElement}>
-              <NavLink to="/login" className={style.link}>Login</NavLink>
+              <NavLink to="/login" className={style.link}>
+                Login
+              </NavLink>
             </li>
           </>
         )}

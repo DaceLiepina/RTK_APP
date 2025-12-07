@@ -1,0 +1,133 @@
+.countdownWrapper {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 35px;
+  background: linear-gradient(145deg, #1f1f1f, #4a4a4a);
+  border-radius: 22px;
+  border: 1px solid #3b3b3b;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55);
+  text-align: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Snow sparkle overlay */
+.countdownWrapper::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  width: 180%;
+  height: 180%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.10) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  animation: christmasGlow 6s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes christmasGlow {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.1); }
+}
+
+.countdownTitle {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #910505, #c96f60, #16c016);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+
+/* ================================
+   Time display
+================================ */
+.countdownTime {
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 20px;
+
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.25),
+    0 0 20px rgba(228, 4, 4, 0.25);
+}
+
+.countdownLabels {
+  color: #cccccc;
+  font-size: 1rem;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* Single time box (optional upgrade) */
+.countdownBox {
+  display: inline-block;
+  margin: 10px;
+  padding: 15px 25px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  font-size: 2.2rem;
+  min-width: 90px;
+  box-shadow:
+    inset 0 0 8px rgba(255, 255, 255, 0.06),
+    0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.countdownLabel {
+  font-size: 0.9rem;
+  color: #dddddd;
+  margin-top: 6px;
+  display: block;
+}
+
+
+@keyframes snowFloat {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+  100% { transform: translateY(40px) rotate(180deg); opacity: 0.3; }
+}
+
+@media (max-width: 768px) {
+  .countdownWrapper {
+    padding: 25px;
+  }
+  .countdownTitle {
+    font-size: 2rem;
+  }
+  .countdownTime {
+    font-size: 2.1rem;
+  }
+  .countdownBox {
+    min-width: 70px;
+    padding: 12px 18px;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .countdownWrapper {
+    padding: 20px;
+    margin: 20px auto;
+  }
+  .countdownTitle {
+    font-size: 1.6rem;
+  }
+  .countdownTime {
+    font-size: 1.6rem;
+  }
+  .countdownBox {
+    padding: 10px 14px;
+    min-width: 60px;
+    font-size: 1.4rem;
+  }
+  .countdownLabel {
+    font-size: 0.8rem;
+  }
+}

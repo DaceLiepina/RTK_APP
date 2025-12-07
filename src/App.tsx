@@ -12,6 +12,7 @@ import ProtectedRoute from "./features/ProtectedRoute/ProtectedRoute";
 import WeatherApp from "./features/WeatherApp/WeatherApp";
 import ApodRandom from "./features/apod/ApodRandom";
 import CryptoCard from "./features/crypto/CryptoCard";
+import Countdown from "./features/Countdown/Countdown"
 
 function App(): JSX.Element {
   return (
@@ -30,7 +31,10 @@ function App(): JSX.Element {
           path="crypto"
           element={<ProtectedRoute outlet={<CryptoCard />} />}
         />
-
+        <Route
+          path="timer"
+          element={<ProtectedRoute outlet={<Countdown />} />}
+        />
         <Route
           path="counter"
           element={<ProtectedRoute outlet={<Counter />} />}
@@ -48,12 +52,11 @@ function App(): JSX.Element {
           path="sandwich"
           element={<ProtectedRoute outlet={<Sandwich />} />}
         />
-         <Route
+        <Route
           path="apod"
           element={<ProtectedRoute outlet={<ApodRandom />} />}
         />
       </Route>
-      
     </Routes>
   );
 }

@@ -16,8 +16,10 @@ import { weatherApi } from "../features/WeatherApp/types/weatherApi";
 
 import cryptoReducer from "../features/crypto/cryptoSlice";
 import { cryptoApi } from "../features/crypto/cryptoApi";
+import { christmasApi } from "../features/Countdown/services/christmasApi";
+import timerReducer from "../features/Countdown/services/timerSlice"
 
-// -------------------- ROOT REDUCER --------------------
+
 
 const rootReducer = combineReducers({
   counter: counterReducer,
@@ -27,11 +29,15 @@ const rootReducer = combineReducers({
   auth: authReducer,
   apod: apodReducer,
   crypto: cryptoReducer,
+timer: timerReducer,
 
-  // RTK Query
+
+ 
   [usersApi.reducerPath]: usersApi.reducer,
   [weatherApi.reducerPath]: weatherApi.reducer,
   [cryptoApi.reducerPath]: cryptoApi.reducer,
+  [christmasApi.reducerPath]: christmasApi.reducer,
+
 });
 
 // -------------------- PERSIST CONFIG --------------------
@@ -57,7 +63,9 @@ export const store = configureStore({
     getDefault({ serializableCheck: false })
       .concat(weatherApi.middleware)
       .concat(usersApi.middleware)
-      .concat(cryptoApi.middleware),
+      .concat(cryptoApi.middleware)
+      .concat(christmasApi.middleware),
+
 });
 
 // -------------------- PERSISTOR --------------------
