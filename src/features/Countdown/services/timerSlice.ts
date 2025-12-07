@@ -2,16 +2,6 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { TimeLeft } from "./christmasApi";
 
-
-function normalize(t: TimeLeft) {
-  return {
-    days: Math.floor(t.days),
-    hours: Math.floor(t.hours % 24),
-    minutes: Math.floor(t.minutes % 60),
-    seconds: Math.floor(t.seconds % 60),
-  };
-}
-
 // 1. Описываем состояние этого слайса
 interface TimerState {
  lastData: TimeLeft | null;
