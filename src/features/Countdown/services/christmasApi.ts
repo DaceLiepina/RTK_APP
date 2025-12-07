@@ -9,17 +9,22 @@ export interface TimeLeft {
 }
 // 2. Создаём API-сервис
 export const christmasApi = createApi({
- // Уникальное имя для этого API в Redux
+ 
+    // Уникальное имя для этого API в Redux
  reducerPath: "christmasApi",
+ 
  // Базовый URL для всех запросов
  baseQuery: fetchBaseQuery({
  baseUrl: "https://christmascountdown.live",
  }),
+ 
  // Описание доступных endpoints (запросов)
  endpoints: (builder) => ({
- // 3. Endpoint: запрос на получение времени до Рождества
+ 
+    // 3. Endpoint: запрос на получение времени до Рождества
  getTimeLeft: builder.query<TimeLeft, void>({
- // относительный путь к ресурсу
+ 
+    // относительный путь к ресурсу
  query: () => "/api/timeleft",
  }),
  }),

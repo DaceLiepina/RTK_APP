@@ -88,7 +88,7 @@ return { days, hours, minutes, seconds };
  
  return (
  <div className={style.countdownWrapper}>
-  <div className={style.countdownTitle}>🎄 Time left until Christmas:</div>
+  <div className={style.countdownTitle}>🎄 Time left until Christmas 🎄</div>
 
   <div>
     <div className={style.countdownBox}>
