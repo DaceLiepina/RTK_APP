@@ -41,7 +41,7 @@ export default function Login(): JSX.Element {
 			<p className={style.loginSubtitle}>Please login to your account</p>
 			
 			<div className={style.hintText}>
-				Подсказка: emilys, emilyspass
+				Clue: emilys, emilyspass
 			</div>
 			
 			{error && (

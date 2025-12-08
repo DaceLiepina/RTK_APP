@@ -1,24 +1,152 @@
 
+.sandwichWrapper {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 35px;
+  background: linear-gradient(145deg, #2d2d2d, #686464);
+  border-radius: 22px;
+  border: 1px solid #404040;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55);
+  text-align: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.sandwichTitle {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #aa5505, #ffcc00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+
+.sandwichImage {
+  width: 60%;
+  max-width: 400px;
+  border-radius: 16px;
+  margin: 20px auto;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  border: 3px solid #ff9a3c;
+  display: block;
+}
+
+.ingredientsDisplay {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 25px 0;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
 
 .button {
-  background-color: #dacb4d; /* Zaļa krāsa */
+  background: linear-gradient(145deg, #ff9a3c, #e67e22);
   border: none;
-  color: rgb(14, 4, 4);
-  padding: 12px 24px;
+  color: rgb(255, 255, 255);
+  padding: 14px 28px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 1.1rem;
   margin: 4px 8px;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 12px;
   transition: all 0.3s ease;
   font-weight: 600;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(255, 154, 60, 0.3);
+  min-width: 180px;
 }
 
-.sandwich-button:hover {
-  background-color: #45a049;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+.button:hover {
+  background: linear-gradient(145deg, #e67e22, #d35400);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 154, 60, 0.4);
+}
+
+.clearButton {
+  background: linear-gradient(145deg, #ff6b6b, #e74c3c);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.clearButton:hover {
+  background: linear-gradient(145deg, #e74c3c, #c0392b);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sandwichWrapper {
+    padding: 25px;
+    margin: 30px auto;
+  }
+  
+  .sandwichTitle {
+    font-size: 2rem;
+  }
+  
+  .sandwichImage {
+    width: 70%;
+  }
+  
+  .ingredientsDisplay {
+    font-size: 1.5rem;
+    padding: 15px;
+  }
+  
+  .button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sandwichWrapper {
+    padding: 20px;
+    margin: 20px auto;
+  }
+  
+  .sandwichTitle {
+    font-size: 1.6rem;
+  }
+  
+  .sandwichImage {
+    width: 80%;
+  }
+  
+  .ingredientsDisplay {
+    font-size: 1.3rem;
+    padding: 12px;
+  }
+  
+  .buttonsContainer {
+    gap: 10px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    min-width: 140px;
+    font-size: 0.9rem;
+    margin: 2px 4px;
+  }
 }

@@ -13,7 +13,7 @@
   max-width: 800px;
   margin: 40px auto;
   padding: 35px;
-  background: linear-gradient(120deg, #0a0a0a, #b63721);
+  background: linear-gradient(120deg, #252424, #ad594a);
   border-radius: 22px;
   border: 1px solid #3b3b3b;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55);
@@ -49,7 +49,7 @@
   font-size: 2.4rem;
   font-weight: 700;
   margin-bottom: 15px;
-  background: linear-gradient(90deg, #910505, #c96f60, #1beb1b);
+  background: linear-gradient(90deg, #ec0505, #c96f60, #02dd02);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: 1px;
