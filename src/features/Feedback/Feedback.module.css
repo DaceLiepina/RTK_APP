@@ -1,4 +1,15 @@
 /* Footer.module.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 .footerContainer {
   background: linear-gradient(145deg, #615d5d, #2d2d2d);
   border-top: 1px solid #404040;

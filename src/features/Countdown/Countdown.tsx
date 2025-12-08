@@ -93,22 +93,22 @@ return { days, hours, minutes, seconds };
   <div>
     <div className={style.countdownBox}>
       {time.days}
-      <span className={style.countdownLabel}>дн.</span>
+      <span className={style.countdownLabel}>d.</span>
     </div>
 
     <div className={style.countdownBox}>
       {time.hours}
-      <span className={style.countdownLabel}>ч.</span>
+      <span className={style.countdownLabel}>h.</span>
     </div>
 
     <div className={style.countdownBox}>
       {time.minutes}
-      <span className={style.countdownLabel}>мин.</span>
+      <span className={style.countdownLabel}>min.</span>
     </div>
 
     <div className={style.countdownBox}>
       {time.seconds}
-      <span className={style.countdownLabel}>сек.</span>
+      <span className={style.countdownLabel}>sek.</span>
     </div>
   </div>
 </div>
